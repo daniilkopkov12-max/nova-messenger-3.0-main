@@ -9,7 +9,7 @@ export function getSocket(): Socket | null {
 export function connectSocket(onConnect?: () => void) {
   if (socket?.connected) return socket;
 
-  socket = io(window.location.origin, {
+  socket = io('https://nova-messenger-3-0-main.onrender.com', {
     path: '/socket.io',
     withCredentials: true,
     transports: ['websocket', 'polling'],
